@@ -1,0 +1,8 @@
+uprobe:./ebpf_demo:main.ebpf_demo {
+    @start[pid] = nsecs;
+}
+
+uprobe:./ebpf_demo:main.ebpf_demo /@start[pid]/ {
+    @ns[comm] = hist(nsecs - @start[pid]);
+    delete(@start[pid])
+}
