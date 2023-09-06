@@ -16,7 +16,7 @@
             linkRange('speed', 'speed-value')
 
             // Go code background
-            fetch('index.html').then(res => res.text()).then(res => {
+            fetch('main.go').then(res => res.text()).then(res => {
                 let codeEl = document.getElementById("code")
                 codeEl.innerHTML = res.replace(/&/g, "&amp;")
                     .replace(/>/g, "&gt;")
